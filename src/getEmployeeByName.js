@@ -1,14 +1,11 @@
-const { species } = require('../data/zoo_data');
+const { species, employees } = require('../data/zoo_data');
 const data = require('../data/zoo_data');
 
-const [{ ...um }] = species[1];
-const [{ ...d }] = um.residents;
-
-console.log(um);
-console.log(d);
-
 function getEmployeeByName(employeeName) {
-
+  if (!employeeName) {
+    return {};
+  } return employees.find((e) => e.firstName === employeeName || e.lastName === employeeName);
 }
 
+console.log(getEmployeeByName());
 module.exports = getEmployeeByName;
