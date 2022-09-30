@@ -3,27 +3,28 @@ const data = require('../data/zoo_data');
 
 const [...ret] = employees;
 
-const um = ret[0].id;
 const dois = ret[1].id;
 const tres = ret[2].id;
-const quatro = ret[3].id;
 const cinco = ret[4].id;
-const seis = ret[5].id;
-const sete = ret[6].id;
 const oito = ret[7].id;
 
-// console.log(dois);
+// console.log(ret);
 function isManager(id) {
   // seu código aqui
   if (dois === id || tres === id || cinco === id || oito === id) {
     return true;
   } return false;
 }
-console.log(isManager());
+// console.log(isManager());
 
 function getRelatedEmployees(managerId) {
   // seu código aqui
-  if ()
+  const ver = isManager(managerId);
+  if (ver === true) {
+    return employees.filter((e) => e.managers
+      .some((res) => res === managerId))
+      .map((nome) => `${nome.firstName} ${nome.lastName}`);
+  }
+  throw new Error('O id inserido não é de uma pessoa colaboradora gerente!');
 }
-
 module.exports = { isManager, getRelatedEmployees };
