@@ -1,4 +1,3 @@
-const { species } = require('../data/zoo_data');
 const handlerElephants = require('../src/handlerElephants');
 
 describe('Testes da função HandlerElephants', () => {
@@ -22,5 +21,11 @@ describe('Testes da função HandlerElephants', () => {
   });
   it('testando sem paramentro', () => {
     expect(handlerElephants()).toEqual(undefined);
+  });
+  it('testando object vazio', () => {
+    expect(handlerElephants({})).toEqual('Parâmetro inválido, é necessário uma string');
+  });
+  it('testando string que nao completa ', () => {
+    expect(handlerElephants('')).toEqual(null);
   });
 });
