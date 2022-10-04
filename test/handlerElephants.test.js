@@ -11,4 +11,16 @@ describe('Testes da função HandlerElephants', () => {
   it('testando averageAge', () => {
     expect(handlerElephants('averageAge')).toEqual(10.5);
   });
+  it('testando location', () => {
+    expect(handlerElephants('location')).toEqual('NW');
+  });
+  it('testando popularity', () => {
+    expect(handlerElephants('popularity')).toEqual(5);
+  });
+  it('testando availability', () => {
+    expect(handlerElephants('availability')).toEqual(['Friday', 'Saturday', 'Sunday', 'Tuesday']);
+  });
+  it('testando sem paramentro', () => {
+    expect(handlerElephants()).toEqual(undefined);
+  });
 });
